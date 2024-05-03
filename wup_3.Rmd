@@ -30,10 +30,12 @@ $H_A$ : There is a difference in the average amount of alcohol consumed per week
 
 # Methods 
 
+We predict that alcohol consumed based on row
 alcohol is numeric variable. 
 
 Seat is a categorical variable.   
 
+So we used the num~cat file
 
 ## Now with ggplot - first select the basic data
 
@@ -69,6 +71,13 @@ Numerical summary shows that median for back seats consumptions is 3.5, front se
 model1 <- aov(alcohol~Seat,data=davisdata)
 summary.aov(model1)
 ```
+The p-value is 0.000116 which is < 0.05
+
+
 ## Conclusions
+
+We were trying to figure out if there is a difference and we found out that There is a difference in the average amount of alcohol consumed per week based in seating row. Our p value being 0.000116 < 0.05. 
+
+
 
 
