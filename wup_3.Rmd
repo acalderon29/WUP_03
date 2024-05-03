@@ -30,15 +30,9 @@ $H_A$ : There is a difference in the average amount of alcohol consumed per week
 
 # Methods 
 
-We predict alcohol consumption based on row 
-alcohol ~ Seat
+alcohol is numeric variable. 
 
-
-alcohol is numeric variable 
-Seat is a categorical variable 
-
-so we used the numerical~cat helper file 
-
+Seat is a categorical variable.   
 
 
 ## Now with ggplot - first select the basic data
@@ -58,11 +52,23 @@ basicCN + geom_boxplot()
 ```{r}
 basicCN + geom_boxplot(notch=TRUE,outlier.color = "red") + stat_boxplot(geom ='errorbar') + labs(title="Fancy notch boxplot \n with 2 lines")
 ```
+This boxplot shows numerical data of alcohol consumed for front , middle and back. 
+
 
 ## Numerical Summarys 
+```{r}
+favstats(alcohol~Seat,data=ucdavis1)
+```
+
+
+Numerical summary shows that median for back seats consumptions is 3.5, front seat cosumption is 0.0, and middle seat is 1.0.
+
 
 ## Inferential Tests
-
+```{r}
+model1 <- aov(alcohol~Seat,data=davisdata)
+summary.aov(model1)
+```
 ## Conclusions
 
 
